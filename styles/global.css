@@ -1,0 +1,245 @@
+/* --- global.css --- */
+
+/* --- 1. Variables de Diseño (Tokens) --- */
+:root {
+    --border-radius-full: 9999px;
+    --font-size-lg: 1.125rem;
+    --status-danger: #dc2626;
+    --color-on-surface: #0f1724;
+    --btn-line-height: 1.2;
+    --font-size-base: 1rem;
+    --spacing-lg: 1rem;
+    --font-size-xl: 1.5rem;
+    --font-weight-semibold: 600;
+    --font-family-heading: "Roboto", system-ui, -apple-system, "Segoe UI",
+  0    Roboto, "Helvetica Neue", Arial;
+    --status-success: #059669;
+    --btn-gap: var(--spacing-xs);
+    --font-size-xs: 0.75rem;
+    --line-height-default: 1.5;
+    --section-gap: clamp(2rem, 4vw, 5rem);
+    --color-surface: #f7fafc;
+    --letter-spacing-tight: -0.01em;
+    --shadow-level-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-level-2: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --color-border: #e6edf3;
+    --color-on-primary: #ffffff;
+    --status-muted: #9ca3af;
+    --border-radius-sm: 4px;
+    --color-surface-elevated: #ffffff;
+    --font-weight-medium: 500;
+    --btn-font-size: var(--font-size-base);
+    --spacing-xs: 0.25rem;
+    --shadow-level-3: 0 12px 32px rgba(0, 0, 0, 0.18);
+    --spacing-md: 0.75rem;
+    --border-radius-md: 8px;
+    --spacing-xl: 1.5rem;
+    --color-primary: #117a4d;
+    --font-size-hero: 2.25rem;
+    --font-size-sm: 0.875rem;
+    --border-radius-lg: 12px;
+    --color-backplate: rgba(17, 122, 77, 0.1); /* Adjusted backplate for primary color */
+    --btn-font-weight: 500;
+    --font-family-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+  0    "Helvetica Neue", Arial;
+    --content-max-width: 76rem;
+    --color-scrim: rgba(15, 23, 36, 0.7); /* Darker scrim */
+    --color-on-surface-secondary: #4b5563;
+    --line-height-tight: 1.1;
+    --color-overlay: rgba(15, 23, 36, 0.6);
+    --accessible-contrast-primary: color-mix(in srgb,var(--color-primary) 85%, #000 15%); /* Adjusted mix */
+    --status-warning: #d97706;
+    --text-muted: var(--color-on-surface-secondary);
+    --spacing-2xl: 2rem;
+    --font-weight-regular: 400;
+    --letter-spacing-normal: 0em;
+    --spacing-sm: 0.5rem;
+    /* Added animation variables */
+    --animation-duration-fast: 0.15s;
+    --animation-duration-standard: 0.3s;
+    --animation-curve-primary: ease;
+
+    /* Color accent (not defined, using primary as fallback) */
+    --color-accent: var(--color-primary);
+}
+
+/* --- 2. Estilos Base Globales --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: var(--line-height-default);
+    color: var(--color-on-surface);
+    background-color: var(--color-surface);
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight); /* Add tight line-height */
+}
+
+/* Specific heading sizes (adjust as needed) */
+h1 { font-size: var(--font-size-hero); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+h4 { font-size: var(--font-size-base); }
+
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    width: 100%;
+    /* Consistent vertical rhythm */
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+/* Common title style used across sections */
+.home-section-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg); /* Add consistent bottom margin */
+}
+
+/* Common content paragraph style */
+.home-section-content {
+    font-size: var(--font-size-base); /* Changed from sm to base */
+    color: var(--color-on-surface-secondary);
+    line-height: var(--line-height-default);
+    max-width: 65ch; /* Limit line length for readability */
+}
+
+/* Common subtitle style */
+.context-subtitle {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-on-surface); /* Make it stand out more */
+}
+
+
+/* --- Estilos de Botones --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--btn-gap);
+    font-family: var(--font-family-body); /* Ensure button font */
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    line-height: var(--btn-line-height);
+    letter-spacing: var(--letter-spacing-normal);
+    padding: var(--spacing-sm) var(--spacing-lg); /* Adjusted padding */
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color var(--animation-duration-fast) var(--animation-curve-primary),
+                border-color var(--animation-duration-fast) var(--animation-curve-primary),
+                color var(--animation-duration-fast) var(--animation-curve-primary),
+                box-shadow var(--animation-duration-fast) var(--animation-curve-primary),
+                transform var(--animation-duration-fast) var(--animation-curve-primary);
+}
+/* Hover/Focus states for buttons */
+.btn:hover {
+    box-shadow: var(--shadow-level-2); /* Elevate button slightly */
+    transform: translateY(-1px); /* Subtle lift */
+}
+.btn:active {
+    box-shadow: none;
+    transform: translateY(0px); /* Push down on click */
+}
+/* Focus visible state for accessibility */
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+
+.btn-primary {
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.btn-primary:hover {
+     background-color: var(--accessible-contrast-primary);
+     border-color: var(--accessible-contrast-primary);
+}
+
+.btn-outline {
+    color: var(--color-primary);
+    background-color: transparent;
+    border-color: var(--color-primary);
+}
+.btn-outline:hover {
+    background-color: var(--color-backplate); /* Use backplate color */
+    color: var(--accessible-contrast-primary);
+    border-color: var(--accessible-contrast-primary);
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+     .btn:hover, .btn:active {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    nav, footer, .cta-cluster, .hero__visual, .controls, .alerts, .stage-controls, .camera-overlay, .context-actions, .context-confidence, .stream-play, .rail, .camera-inset, .quick-actions, .alert-snippet, .action-column, .scenario-actions, .scenario-presets, .sidebar, .filter-bar, .actions, .alerts-sidebar {
+        display: none !important; /* Hide non-essential elements */
+    }
+    section, .container, .panel, .alerts-panel {
+        box-shadow: none !important;
+        border: none !important;
+        padding: var(--spacing-md) 0 !important;
+        margin: var(--spacing-lg) 0 !important;
+        page-break-inside: avoid;
+    }
+    .grid, .flex { /* Basic reset for layout containers */
+        display: block;
+    }
+    .btn {
+        border: 1px solid #ccc;
+        padding: 2px 4px;
+        font-size: 10pt;
+    }
+}

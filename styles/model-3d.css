@@ -1,0 +1,237 @@
+/* --- model-3d.css --- */
+
+/* Section Container (#model-section) */
+.container { /* This corresponds ONLY to the section with id="model-section" */
+    gap: var(--section-gap);
+    margin: var(--section-gap) auto 0;
+    display: grid;
+    padding: var(--spacing-lg); /* Base padding */
+    max-width: var(--content-max-width);
+    box-shadow: var(--shadow-level-1);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    grid-template-columns: 2fr 1fr; /* Default layout */
+}
+
+/* Stage Area (Left Side) */
+.stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.stage-canvas {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background-color: #eee; /* Placeholder */
+    border: 1px solid var(--color-border); /* Add border */
+    box-shadow: var(--shadow-level-1); /* Add shadow */
+}
+
+.stage-canvas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stage-controls {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 2; /* Ensure controls are above image */
+}
+
+.stage-control {
+    background-color: hsla(0, 0%, 100%, 0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid hsla(210, 17%, 93%, 0.5); /* Semi-transparent border */
+    border-radius: var(--border-radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-on-surface);
+    transition: background-color var(--animation-duration-fast) var(--animation-curve-primary);
+}
+.stage-control:hover {
+    background-color: hsla(0, 0%, 100%, 0.9);
+}
+.stage-control svg {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+}
+
+
+/* Camera Overlay (within Stage) */
+.camera-overlay {
+    position: relative; /* Keep it in flow or adjust positioning */
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-level-2);
+    border: 1px solid var(--color-border);
+    max-width: 200px;
+    aspect-ratio: 4 / 3;
+    /* Position relative to stage if needed, e.g., absolute */
+    /* position: absolute; */
+    /* bottom: var(--spacing-md); */
+    /* left: var(--spacing-md); */
+    align-self: flex-start; /* Example positioning */
+    margin-top: var(--spacing-md); /* Add space if in flow */
+}
+
+.camera-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.camera-label { /* Reusing styles */
+    position: absolute;
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    background-color: var(--status-danger);
+    border-radius: var(--border-radius-full);
+}
+.camera-label svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* Context Panel (Right Side) */
+.context {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface-elevated);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.actuator-legend {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.legend-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--border-radius-full);
+    flex-shrink: 0;
+}
+.legend-icon--success { background-color: var(--status-success); }
+.legend-icon--muted { background-color: var(--status-muted); }
+/* Add warning/danger if needed */
+
+.legend-text { display: flex; flex-direction: column; }
+.legend-label { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); }
+.legend-status { font-size: var(--font-size-xs); color: var(--text-muted); }
+
+.context-readings { display: flex; flex-direction: column; gap: var(--spacing-md); }
+
+.reading-grid {
+    display: grid;
+    /* Use repeat with auto-fit for responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.reading-item {
+    padding: var(--spacing-sm);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-border); /* Add subtle border */
+    text-align: center; /* Center text */
+}
+.reading-label { font-size: var(--font-size-xs); color: var(--text-muted); margin-bottom: 2px;}
+.reading-value { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); }
+
+.context-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: auto; /* Push to bottom */
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+.context-actions .btn {
+    flex: 1; /* Make buttons share space */
+    font-size: var(--font-size-sm); /* Smaller text */
+}
+
+.context-confidence {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.confidence-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.confidence-indicators { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+
+.confidence-badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface-secondary);
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-border);
+}
+
+
+/* --- Responsive adjustments --- */
+@media (max-width: 991px) {
+    .container { /* Applies only to #model-section container */
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+     .context {
+        margin-top: var(--spacing-xl); /* Add space when stacked */
+    }
+}
+
+@media (max-width: 479px) {
+    .container { /* Applies only to #model-section container */
+        padding: var(--spacing-md);
+    }
+    .context-actions {
+        flex-direction: column;
+    }
+    .context-actions .btn {
+        width: 100%;
+        flex: unset; /* Reset flex */
+    }
+}

@@ -1,0 +1,249 @@
+/* --- quick-access.css --- */
+
+.quick-access {
+    gap: var(--spacing-xl); /* Adjusted gap based on previous example */
+    margin: var(--section-gap) auto 0;
+    display: grid;
+    padding: var(--spacing-2xl);
+    max-width: var(--content-max-width);
+    /* box-shadow: var(--shadow-level-1); */ /* Removed shadow, container has it now */
+    /* background: var(--color-surface-elevated); */ /* Removed background, container has it */
+    /* border-radius: var(--border-radius-lg); */ /* Removed border-radius */
+    grid-template-columns: 2fr 1fr; /* Layout from JSON */
+    /* Added container styles based on previous example - assuming this section is wrapped */
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-level-1);
+
+}
+
+.viewport {
+    /* Styles for the main visual area */
+    position: relative; /* For overlays */
+    display: flex; /* Using flex to help with actuators below */
+    flex-direction: column; /* Stack canvas and actuators */
+    gap: var(--spacing-md);
+}
+
+.canvas {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-level-2);
+    border: 1px solid var(--color-border);
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    background-color: #333; /* Placeholder */
+}
+
+.canvas video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.canvas-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    background-color: var(--color-overlay);
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    opacity: 0; /* Hidden by default */
+    transition: opacity var(--animation-duration-standard) var(--animation-curve-primary);
+    text-align: center;
+}
+.canvas:hover .canvas-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+.canvas-overlay svg {
+    /* Style for the 3D cube icon */
+    margin-bottom: var(--spacing-xs);
+}
+
+.camera { /* Reusing styles from hero */
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    background-color: var(--status-danger);
+    border-radius: var(--border-radius-full);
+}
+.camera svg {
+    width: 12px;
+    height: 12px;
+}
+
+.actuators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive columns */
+    gap: var(--spacing-md);
+}
+
+.actuator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md); /* Reduced padding */
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    transition: all var(--animation-duration-fast) var(--animation-curve-primary);
+}
+.actuator svg {
+    margin-bottom: var(--spacing-xs);
+}
+
+.actuator--active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    /* box-shadow: 0 0 10px var(--color-backplate); */ /* Subtle glow */
+    background-color: var(--color-backplate); /* Light background */
+}
+.actuator--inactive {
+    color: var(--color-on-surface-secondary);
+}
+
+.actuator__status {
+    font-size: var(--font-size-xs); /* Smaller status */
+}
+
+/* Side Panel */
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg); /* Adjusted padding */
+    box-shadow: var(--shadow-level-1);
+}
+
+.module-title {
+    font-size: var(--font-size-lg); /* Slightly smaller */
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm); /* Added margin */
+    text-align: center;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    gap: var(--spacing-md);
+}
+
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm); /* Reduced padding */
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+.metric-card svg {
+    width: 24px; /* Smaller icons */
+    height: 24px;
+    color: var(--color-primary); /* Icon color */
+    margin-bottom: var(--spacing-xs);
+}
+
+.metric-label {
+    font-size: var(--font-size-xs); /* Smaller label */
+    color: var(--text-muted);
+}
+
+.metric-value {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+}
+
+.metric-status {
+    font-size: var(--font-size-xs); /* Smaller status */
+    font-weight: var(--font-weight-medium);
+    color: var(--status-success); /* Use status color */
+    /* Add logic for other statuses (Normal, Estable) */
+}
+/* Example for other statuses */
+/* .metric-status.normal { color: var(--status-muted); } */
+/* .metric-status.stable { color: var(--color-primary); } */
+
+
+.controls { /* Controls within the side panel */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: auto; /* Push to bottom */
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+.controls .btn {
+    font-size: var(--font-size-sm); /* Smaller button text */
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.alerts { /* Link at the bottom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-on-surface-secondary);
+    transition: all var(--animation-duration-fast) var(--animation-curve-primary);
+}
+.alerts svg {
+     width: 16px;
+     height: 16px;
+}
+.alerts:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--color-backplate);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .quick-access {
+        grid-template-columns: 1fr;
+    }
+    .side {
+        margin-top: var(--spacing-xl); /* Add space when stacked */
+    }
+}
+
+@media (max-width: 479px) {
+    .quick-access {
+        padding: var(--spacing-lg);
+    }
+    .metrics {
+        /* Keep 2 columns or stack if needed */
+        /* grid-template-columns: 1fr; */
+    }
+    .controls {
+        grid-template-columns: 1fr; /* Stack buttons */
+    }
+}

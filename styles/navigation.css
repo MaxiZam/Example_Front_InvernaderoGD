@@ -1,0 +1,298 @@
+/* --- navigation.css --- */
+
+.navigation {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--color-surface-elevated); /* Changed to elevated */
+    box-shadow: var(--shadow-level-1);
+    transition: box-shadow var(--animation-duration-standard) var(--animation-curve-primary);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navigation-container {
+    margin: 0 auto;
+    display: flex;
+    padding: var(--spacing-md) var(--spacing-xl);
+    max-width: var(--content-max-width);
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation-logo {
+    gap: var(--spacing-sm);
+    color: var(--color-primary); /* Use primary color for logo text */
+    z-index: 3;
+    display: flex;
+    font-size: var(--font-size-lg);
+    position: relative;
+    align-items: center;
+    font-weight: var(--font-weight-semibold);
+    transition: transform var(--animation-duration-fast) var(--animation-curve-primary);
+    text-decoration: none;
+}
+.navigation-logo:hover {
+    transform: scale(1.02);
+}
+
+.navigation-logo-icon {
+    color: var(--color-primary);
+    width: 32px;
+    height: 32px;
+    transition: all var(--animation-duration-standard) var(--animation-curve-primary);
+    stroke-width: 2.5;
+}
+
+.navigation-logo-text {
+    font-family: var(--font-family-heading);
+    line-height: var(--line-height-tight);
+    white-space: nowrap;
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.navigation-menu {
+    gap: var(--spacing-xs);
+    /* Centering logic for desktop */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* --- */
+    margin: 0;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.navigation-menu-item {
+    position: relative;
+}
+
+.navigation-menu-link {
+    gap: var(--spacing-xs);
+    color: var(--color-on-surface-secondary); /* Muted color for links */
+    display: flex;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    font-weight: var(--font-weight-medium);
+    transition: all var(--animation-duration-standard) var(--animation-curve-primary);
+    white-space: nowrap;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+}
+.navigation-menu-link:hover {
+    background-color: var(--color-surface); /* Subtle background */
+    color: var(--color-primary); /* Highlight on hover */
+}
+/* Active link style (optional - needs JS or manual class) */
+/* .navigation-menu-link.active {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+} */
+
+
+.navigation-menu-icon {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    transition: all var(--animation-duration-standard) var(--animation-curve-primary);
+}
+.navigation-menu-link:hover .navigation-menu-icon {
+    opacity: 1;
+}
+
+.navigation-actions {
+    gap: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+}
+
+.navigation-toggle {
+    color: var(--color-on-surface);
+    width: 44px;
+    border: none;
+    cursor: pointer;
+    height: 44px;
+    z-index: 3;
+    display: none; /* Hidden by default */
+    position: relative;
+    align-items: center;
+    background: transparent;
+    transition: all var(--animation-duration-standard) var(--animation-curve-primary);
+    border-radius: var(--border-radius-md);
+    justify-content: center;
+}
+.navigation-toggle svg {
+    position: absolute; /* Stack icons */
+    transition: opacity var(--animation-duration-standard) var(--animation-curve-primary), transform var(--animation-duration-standard) var(--animation-curve-primary);
+}
+/* Toggle icon states */
+.navigation-toggle[aria-expanded="false"] svg:first-of-type { /* Menu icon */
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.navigation-toggle[aria-expanded="false"] svg:last-of-type { /* Close icon */
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+}
+.navigation-toggle[aria-expanded="true"] svg:first-of-type { /* Menu icon */
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+}
+.navigation-toggle[aria-expanded="true"] svg:last-of-type { /* Close icon */
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+
+.navigation-status {
+    gap: var(--spacing-xs);
+    top: var(--spacing-xs); /* Position relative to container */
+    color: var(--color-on-surface-secondary);
+    right: var(--spacing-xl);
+    display: flex; /* Display by default, hide in media query */
+    padding: 4px var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    position: absolute;
+    align-items: center;
+    background: color-mix(in srgb, var(--color-surface-elevated, #FFF) 50%, transparent);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--border-radius-full);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--color-border); /* Add subtle border */
+}
+
+.navigation-status-dot {
+    width: 8px; /* Slightly larger */
+    height: 8px;
+    animation: navigation-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 6px var(--status-success); /* Soft glow */
+    background: var(--status-success);
+    border-radius: var(--border-radius-full);
+}
+
+.navigation-status-text {
+    white-space: nowrap;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+/* --- Media Queries específicas para Navegación --- */
+@media (max-width: 991px) {
+    .navigation-container {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    .navigation-status {
+        display: none;
+    }
+    .navigation-menu {
+        /* Mobile menu styles */
+        gap: 0;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        opacity: 0;
+        padding: var(--spacing-md);
+        overflow: hidden;
+        position: absolute; /* Relative to nav */
+        box-shadow: var(--shadow-level-2);
+        max-height: 0;
+        transform: translateY(-10px);
+        background: var(--color-surface-elevated); /* Use elevated surface */
+        transition: all var(--animation-duration-standard) var(--animation-curve-primary);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .navigation-menu-open { /* Class added by JS */
+        opacity: 1;
+        max-height: calc(100vh - 73px); /* Adjust based on nav height */
+        transform: translateY(0);
+        overflow-y: auto; /* Allow scrolling if menu is long */
+    }
+    .navigation-menu-item {
+        width: 100%;
+    }
+    .navigation-menu-link {
+        width: 100%;
+        padding: var(--spacing-md);
+        font-size: var(--font-size-lg);
+        justify-content: flex-start;
+        color: var(--color-on-surface); /* Darker text in mobile menu */
+    }
+    .navigation-menu-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .navigation-actions {
+        display: none;
+    }
+    .navigation-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .navigation-container {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    .navigation-logo {
+        font-size: var(--font-size-base);
+    }
+    .navigation-logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+    .navigation-menu-open {
+        max-height: calc(100vh - 61px); /* Adjust based on nav height */
+    }
+    .navigation-menu-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    .navigation-menu-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 479px) {
+    .navigation-logo-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .navigation-logo-text {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* --- Animaciones --- */
+@keyframes navigation-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 6px var(--status-success);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px var(--status-success); /* Enhance glow */
+    }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .navigation, .navigation-logo, .navigation-menu-link, .navigation-toggle, .navigation-menu, .navigation-logo-icon {
+        transition: none !important;
+    }
+    .navigation-status-dot {
+        animation: none !important;
+    }
+    .navigation-toggle svg {
+        transition: none !important;
+    }
+}

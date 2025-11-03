@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvernaderoGD - Gemelo Digital</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/quick-access.css">
+    <link rel="stylesheet" href="styles/model-3d.css">
+    <link rel="stylesheet" href="styles/camera-section.css">
+    <link rel="stylesheet" href="styles/environmental-metrics.css">
+    <link rel="stylesheet" href="styles/irrigation.css">
+    <link rel="stylesheet" href="styles/panel.css">
+    <link rel="stylesheet" href="styles/alerts-panel.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <nav class="navigation" id="navigation-main">
+        <div class="navigation-container">
+            <a class="navigation-logo" aria-label="InvernaderoGD - Inicio" href="/">
+                <svg class="navigation-logo-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8c0 5.5-4.78 10-10 10"></path>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                    </g>
+                </svg>
+                <span class="navigation-logo-text">InvernaderoGD</span>
+            </a>
+            <ul class="navigation-menu" id="navigation-menu">
+                <li class="navigation-menu-item">
+                    
+                    <a class="navigation-menu-link" href="#hero-section">
+                        <svg class="navigation-menu-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" rx="1" width="7" height="9"></rect><rect x="14" y="3" rx="1" width="7" height="5"></rect><rect x="14" y="12" rx="1" width="7" height="9"></rect><rect x="3" y="16" rx="1" width="7"height="5"></rect></g>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="navigation-menu-item">
+                     
+                    <a class="navigation-menu-link" href="#metrics-section">
+                        <svg class="navigation-menu-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
+                            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span>Monitoreo</span>
+                    </a>
+                </li>
+                <li class="navigation-menu-item">
+                     
+                    <a class="navigation-menu-link" href="#camera-section">
+                        <svg class="navigation-menu-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g>
+                        </svg>
+                        <span>Cámaras</span>
+                    </a>
+                </li>
+                <li class="navigation-menu-item">
+                     
+                    <a class="navigation-menu-link" href="#alerts-section">
+                        <svg class="navigation-menu-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
+                            <path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span>Alertas</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="navigation-actions">
+                <button class="btn btn-primary">
+                    <span>Log In</span>
+                </button>
+            </div>
+            <button class="navigation-toggle" id="navigation-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <svg class="navigation-toggle-icon-menu" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="width: 24px; height: 24px; position: absolute; transition: all var(--animation-duration-standard) var(--animation-curve-primary);">
+                    <path d="M4 5h16M4 12h16M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="width: 24px; height: 24px; opacity: 0; position: absolute; transform: rotate(90deg) scale(0.8); transition: all var(--animation-duration-standard) var(--animation-curve-primary);">
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1zm-5.5-3.5l-5 5m0-5l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="navigation-status">
+            <span class="navigation-status-dot"></span>
+            <span class="navigation-status-text">Sistema Activo</span>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero-section" role="region" aria-labelledby="hero-heading">
+        <div class="hero__content">
+            <h1 class="home-hero-title" id="hero-heading"> InvernaderoGD — Gemelo Digital Educativo para Invernadero </h1>
+            <p class="home-hero-subtitle">
+                <span> Domina la gestión proactiva del invernadero con un Dashboard responsivo</span><br>
+                <span> diseñado para aprendizaje y operación profesional. Visualiza el modelo 3D,</span><br>
+                <span> accede a cámaras en vivo y toma decisiones basadas en métricas precisas. </span>
+            </p>
+            <div class="cta-cluster">
+                <button class="btn btn-primary" aria-label="Explorar el modelo 3D interactivo del invernadero">
+                    <span> Explorar Modelo 3D </span>
+                </button>
+                <button class="btn btn-outline" aria-label="Ver cámaras en tiempo real">
+                    <span> Cámaras en Vivo </span>
+                </button>
+            </div>
+        </div>
+        <div class="hero__visual">
+            <div class="viewport" aria-label="Vista previa del modelo 3D del invernadero">
+                <div class="viewport__3d">
+                    <img alt="Vista interior del invernadero con sistema hidropónico y cultivos" src=""> <!-- https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+                    <div class="actuator-badges">
+                        <div class="actuator-badge actuator-badge--success" role="status" aria-label="Bomba operativa">
+                            <svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Bomba</span>
+                        </div>
+                        <div class="actuator-badge actuator-badge--success" role="status" aria-label="Ventilador operativo">
+                            <svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618zM12 12v.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Ventilador</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="camera-window" aria-label="Transmisión de cámara en vivo">
+                    <div class="camera-status">
+                        <svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg>
+                        <span>En Vivo</span>
+                    </div>
+                    <img alt="Vista en vivo del cultivo desde cámara del invernadero" src=""> <!-- https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-access" id="quick-access-section" role="region" aria-labelledby="quick-access-heading">
+        <div class="viewport">
+            <div class="canvas" aria-label="Modelo 3D en vivo del invernadero">
+                <!--<video src="https://videos.pexels.com/video-files/7332202/7332202-hd_1280_720_25fps.mp4" loop="true" muted="true" autoPlay="true" aria-hidden="true" playsInline="true"></video>-->
+                <div class="canvas-overlay">
+                    <svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 24 24"><path d="M21 16.008V7.99a1.98 1.98 0 0 0-1-1.717l-7-4.008a2.02 2.02 0 0 0-2 0L4 6.273c-.619.355-1 1.01-1 1.718v8.018c0 .709.381 1.363 1 1.717l7 4.008a2.02 2.02 0 0 0 2 0l7-4.008c.619-.355 1-1.01 1-1.718M12 22V12m0 0l8.73-5.04m-17.46 0L12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <p>Modelo 3D Interactivo</p>
+                </div>
+                <div class="camera" aria-label="Transmisión de cámara integrada">
+                    <svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg>
+                    <span>EN VIVO</span>
+                </div>
+            </div>
+            <div class="actuators">
+                <div class="actuator actuator--active"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Bomba</span><span class="actuator__status">Activo</span></div>
+                <div class="actuator actuator--active"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618zM12 12v.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Ventilador</span><span class="actuator__status">Activo</span></div>
+                <div class="actuator actuator--inactive"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Riego</span><span class="actuator__status">Inactivo</span></div>
+            </div>
+        </div>
+        <div class="side">
+            <h2 class="module-title" id="quick-access-heading">Acceso Rápido</h2>
+            <div class="metrics">
+                <div class="metric-card"><svg width="32" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="metric-label">Temperatura</p><p class="metric-value">24.6°C</p><p class="metric-status">Óptimo</p></div>
+                <div class="metric-card"><svg width="32" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="metric-label">Humedad</p><p class="metric-value">62%</p><p class="metric-status">Normal</p></div>
+                <div class="metric-card"><svg width="32" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="metric-label">Humedad Suelo</p><p class="metric-value">45%</p><p class="metric-status">Estable</p></div>
+                <div class="metric-card"><svg width="32" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24"><path d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="metric-label">Estado General</p><p class="metric-value">Bien</p><p class="metric-status">Sin alertas</p></div>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary"><span>Control Simulado</span></button>
+                <button class="btn btn-outline"><span>Ver Historial</span></button>
+            </div>
+            <a class="alerts" href="#alerts-section"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Ver Alertas y Notificaciones</span></a>
+        </div>
+    </section>
+
+    <section class="container" id="model-section" role="region" aria-labelledby="model-heading">
+        <div class="stage">
+            <div class="stage-canvas" role="img" aria-label="Modelo 3D interactivo del invernadero con actuadores"><img alt="Vista panorámica del interior del invernadero moderno con estructura de vidrio" src=""><div class="stage-controls"><button class="stage-control" aria-label="Rotar modelo"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0a2.34 2.34 0 0 0 3.319 1.915a2.34 2.34 0 0 1 2.33 4.033a2.34 2.34 0 0 0 0 3.831a2.34 2.34 0 0 1-2.33 4.033a2.34 2.34 0 0 0-3.319 1.915a2.34 2.34 0 0 1-4.659 0a2.34 2.34 0 0 0-3.32-1.915a2.34 2.34 0 0 1-2.33-4.033a2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle r="3" cx="12" cy="12"></circle></g></svg></button></div></div>
+        <!-- https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+            <div class="camera-overlay"><img alt="Cámara en vivo del cultivo" src=""><div class="camera-label"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg><span>EN VIVO</span></div></div>
+        <!-- https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+        </div>
+        <div class="context">
+            <h2 class="home-section-title" id="model-heading">Modelo 3D & Actuadores</h2>
+            <p class="home-section-content"> Explore el modelo 3D interactivo del invernadero en tiempo real. Visualice capas estructurales, cultivos y rutas de clima con rotación y zoom fluidos. </p>
+            <div class="actuator-legend"><h3 class="context-subtitle">Estado de Actuadores</h3><div class="legend-items"><div class="legend-item"><span class="legend-icon--success legend-icon"></span><div class="legend-text"><p class="legend-label">Bomba Principal</p><p class="legend-status">Operativo • Última acción: hace 15 min</p></div></div><div class="legend-item"><span class="legend-icon--success legend-icon"></span><div class="legend-text"><p class="legend-label">Ventilador Central</p><p class="legend-status">Operativo • Velocidad: 75%</p></div></div><div class="legend-item"><span class="legend-icon--muted legend-icon"></span><div class="legend-text"><p class="legend-label">Sistema de Riego</p><p class="legend-status">Inactivo • Programado: 18:00</p></div></div></div></div>
+            <div class="context-readings"><h3 class="context-subtitle">Lecturas Clave</h3><div class="reading-grid"><div class="reading-item"><p class="reading-label">Temperatura Objetivo</p><p class="reading-value">24°C</p></div><div class="reading-item"><p class="reading-label">Humedad Relativa</p><p class="reading-value">62%</p></div><div class="reading-item"><p class="reading-label">Estado del Suelo</p><p class="reading-value">Óptimo</p></div></div></div>
+            <div class="context-actions"><button class="btn btn-primary"><span>Acceder a Ejercicios</span></button><button class="btn btn-outline"><span>Ver Manual</span></button></div>
+            <div class="context-confidence"><p class="confidence-label">Integridad de Datos</p><div class="confidence-indicators"><span class="confidence-badge">Latencia: 12ms</span><span class="confidence-badge">Sensores: 8/8</span><span class="confidence-badge">Calidad: Alta</span></div></div>
+        </div>
+    </section>
+
+    <section class="camera-section" id="camera-section" role="region" aria-labelledby="camera-heading">
+        <div class="main-stream">
+            <h2 class="home-section-title" id="camera-heading">Cámaras en Vivo</h2>
+            <div class="stream-main" aria-live="polite" aria-label="Transmisión principal de cámara"><video src="" loop="true" muted="true" autoPlay="true" playsInline="true"></video><div class="stream-overlay"><div class="stream-title"><h3>Cámara Central — Panorámica del Cultivo</h3></div><div class="stream-data"><span class="data-badge">24.6°C</span><span class="data-badge">62% HR</span><span class="data-badge">Bomba: ON</span></div></div><button class="stream-play" aria-label="Reproducir transmisión"><svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>
+        <!-- https://videos.pexels.com/video-files/4725639/4725639-hd_1920_1080_30fps.mp4 -->
+        </div>
+        <!--<div class="mosaic">
+            <div class="stream-tile" role="button" tabindex="0" aria-pressed="false"><img alt="imagen 1" src=""><div class="tile-label"><span>Bancales Norte</span></div></div>
+            <div class="stream-tile" role="button" tabindex="0" aria-pressed="false"><img alt="imagen 2" src=""><div class="tile-label"><span>Sistema de Riego</span></div></div>
+            <div class="stream-tile" role="button" tabindex="0" aria-pressed="false"><img alt="imagen 3" src=""><div class="tile-label"><span>Climatización</span></div></div>
+            <div class="stream-tile" role="button" tabindex="0" aria-pressed="false"><img alt="imagen 4" src=""><div class="tile-label"><span>Vista General</span></div></div>
+        </div>-->
+        <div class="rail">
+            <div class="rail-controls"><h3 class="rail-title">Controles</h3><button class="btn btn-primary"><span>Compartir Enlace</span></button><button class="btn btn-outline"><span>Marcar Evento</span></button><button class="btn btn-outline"><span>Exportar Clip</span></button></div>
+            <div class="rail-alerts"><h3 class="rail-title">Alertas Visuales</h3><div class="alert-item--warning alert-item"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p>Temperatura subiendo</p></div></div>
+            <div class="rail-timeline"><h3 class="rail-title">Línea de Tiempo</h3><div class="timeline-events"><div class="timeline-event"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><span>14:23 - Riego iniciado</span></div><div class="timeline-event"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><span>14:15 - Ventilador ajustado</span></div></div></div>
+        </div>
+    </section>
+
+    <section class="environmental-metrics" id="metrics-section" role="region" aria-labelledby="metrics-heading">
+        <div class="visual">
+            <div class="visual-viewport"><img alt="Vista del sistema de cultivo hidropónico" src=""><div class="visual-scrim"><h2 class="home-section-title" id="metrics-heading">Métricas Ambientales</h2><p class="home-section-content"> Estado en tiempo real del invernadero con seguimiento continuo de condiciones óptimas </p></div></div>
+            <div class="camera-inset"><img alt="Monitoreo en vivo del cultivo" src=""><div class="camera-badge"><svg width="14" xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg><span>EN VIVO</span></div></div>
+        </div>
+        <div class="meter">
+            <h3 class="meter-title">Temperatura</h3>
+            <div class="gauge-container">
+                <svg class="gauge" viewBox="0 0 200 120" aria-hidden="true"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"></path><path class="gauge-fill" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="75.36"></path><circle class="gauge-dot" r="8" cx="100" cy="100" fill="currentColor"></circle></svg>
+                <div class="gauge-reading"><p class="gauge-value"><span> 24.6 </span><span style="font-size: var(--font-size-xl);">°C</span></p><p class="gauge-label">Estable</p></div>
+            </div>
+            <div class="gauge-range"><span>20°C</span><span class="range-optimal">Óptimo</span><span>28°C</span></div>
+            <p class="gauge-trend"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="m5 12l7-7l7 7m-7 7V5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span> Subida lenta (últimas 3h) </span></p>
+        </div>
+        <div class="humidity">
+            <h3 class="chart-title">Humedad Relativa</h3>
+            <div class="chart-container"><svg class="line-chart" viewBox="0 0 400 200" aria-describedby="humidity-desc"><defs><linearGradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color: var(--color-primary); stop-opacity: 0.2;"></stop><stop offset="100%" style="stop-color: var(--color-primary); stop-opacity: 0;"></stop></linearGradient></defs><rect x="0" y="60" fill="var(--status-muted)" width="400" height="60" opacity="0.15"></rect><text x="5" y="55" fill="var(--text-muted)" font-size="10"><span>70%</span></text><text x="5" y="125" fill="var(--text-muted)" font-size="10"><span>50%</span></text><polyline fill="url(#chartGradient)" points="0,100 50,95 100,90 150,85 200,95 250,100 300,90 350,85 400,90" stroke="var(--color-primary)" stroke-width="3"></polyline><circle r="5" cx="400" cy="90" fill="var(--color-accent)"></circle></svg><p class="chart-desc" id="humidity-desc"> 62% — Dentro del rango óptimo (50–70%) </p></div>
+            <p class="chart-trend">Tendencia descendente leve (últimas 3h)</p>
+        </div>
+        <div class="controls">
+            <h3 class="controls-title">Humedad del Suelo</h3>
+            <div class="soil-gauge">
+                <div class="soil-reading"><p class="soil-value"><span> 45 </span><span style="font-size: var(--font-size-lg);">%</span></p><p class="soil-label">Condición Estable</p></div>
+                <div class="soil-bar"><div class="soil-fill" role="progressbar" aria-label="Humedad del suelo al 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" style="width: 45%;"></div></div>
+                <div class="soil-markers"><span class="marker marker--danger">30%</span><span class="marker marker--warning">40%</span><span class="marker marker--success">60%</span></div>
+            </div>
+            <div class="quick-actions"><button class="btn btn-primary"><span>Riego Manual</span></button><button class="btn btn-outline"><span>Ver Historial</span></button></div>
+            <div class="alert-snippet"><p class="snippet-label">Última Alerta</p><p class="snippet-text">Sin alertas críticas en las últimas 24h</p></div>
+        </div>
+    </section>
+
+    <section class="irrigation" id="irrigation-section" role="region" aria-labelledby="irrigation-heading">
+        <div class="gauge-card">
+            <h2 class="home-section-title" id="irrigation-heading"> Humedad del Suelo & Riego </h2>
+            <div class="circular-gauge"><svg class="gauge-svg" viewBox="0 0 200 200"><circle r="80" cx="100" cy="100" fill="none" stroke="var(--color-border)" stroke-width="16"></circle><circle r="80" cx="100" cy="100" fill="none" stroke="var(--status-success)" transform="rotate(-90 100 100)" stroke-width="16" stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="276.32"></circle></svg><div class="gauge-center"><p class="gauge-percent"><span> 45 </span><span style="font-size: var(--font-size-xl);">%</span></p><p class="gauge-status">Estable</p></div></div>
+            <div class="status-summary"><p class="summary-text"> Nivel de humedad dentro del rango óptimo. Próximo riego programado para las 18:00. </p><div class="threshold-indicators"><div class="threshold-item"><span class="threshold-color threshold-color--success"></span><span class="threshold-label">Óptimo: 60–40%</span></div><div class="threshold-item"><span class="threshold-color threshold-color--warning"></span><span class="threshold-label">Atención: 39–30%</span></div><div class="threshold-item"><span class="threshold-color threshold-color--danger"></span><span class="threshold-label">Crítico: &lt;30%</span></div></div></div>
+            <div class="context-guide"><h3 class="guide-title">Contexto Educativo</h3><p class="guide-text"> La humedad del suelo es crucial para el crecimiento óptimo. Valores por debajo del 30% activan alertas automáticas y recomendaciones de riego inmediato. </p><a class="guide-link" href="#!"><span>Ver guía completa de interpretación</span></a></div>
+        </div>
+        <div class="action-column">
+            <div class="action-controls"><h3 class="action-title">Acciones Rápidas</h3><button class="btn btn-primary"><span>Riego Manual Simulado</span></button><button class="btn btn-outline"><span>Programar Riego</span></button><div class="schedule-presets"><button class="preset-btn"><span>Programa Matutino</span></button><button class="preset-btn"><span>Programa Vespertino</span></button><button class="preset-btn"><span>Riego Intensivo</span></button></div></div>
+            <div class="history-card">
+                <h3 class="history-title">Historial de Eventos</h3>
+                <div class="history-items">
+                    <div class="history-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><div class="history-content"><p class="history-event">Riego completado</p><p class="history-time">Hace 6 horas</p></div></div>
+                    <div class="history-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><div class="history-content"><p class="history-event">Ajuste de umbral</p><p class="history-time">Hace 2 días</p></div></div>
+                    <div class="history-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="history-content"><p class="history-event">Calibración de sensores</p><p class="history-time">Hace 1 semana</p></div></div>
+                </div>
+            </div>
+            <a class="learning-link" href="#!"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Acceder a materiales de aprendizaje</span></a>
+        </div>
+    </section>
+
+    <section class="panel" id="controls-section" role="region" aria-labelledby="controls-heading">
+        <div class="scenario-strip"><h2 class="home-section-title" id="controls-heading"> Controles de Actuación Virtual </h2><div class="scenario-actions"><button class="btn btn-outline"><span>Cargar Escenario</span></button><button class="btn btn-outline"><span>Exportar Datos</span></button></div></div>
+        <div class="panel-content-wrapper">
+             <div class="controls-main" role="region" aria-labelledby="controls-heading">
+                <h3 class="controls-subtitle">Panel de Control Rápido — Modo Simulación</h3>
+                <div class="device-controls">
+                    <div class="device-control"><div class="device-header"><svg width="28" xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4 class="device-name">Bomba Principal</h4></div><div class="device-status--active device-status"><span class="status-dot"></span><span>Activo</span></div><div class="device-slider"><label class="slider-label" for="pump-intensity">Intensidad</label><input class="slider-input" id="pump-intensity" max="100" min="0" type="range" value="75" aria-label="Ajustar intensidad de la bomba"><span class="slider-value">75%</span></div><button class="btn btn-primary" aria-pressed="true"><span>Desactivar</span></button></div>
+                    <div class="device-control"><div class="device-header"><svg width="28" xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618zM12 12v.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4 class="device-name">Ventilador Central</h4></div><div class="device-status--active device-status"><span class="status-dot"></span><span>Activo</span></div><div class="device-slider"><label class="slider-label" for="fan-intensity">Velocidad</label><input class="slider-input" id="fan-intensity" max="100" min="0" type="range" value="60" aria-label="Ajustar velocidad del ventilador"><span class="slider-value">60%</span></div><button class="btn btn-primary" aria-pressed="true"><span>Desactivar</span></button></div>
+                    <div class="device-control"><div class="device-header"><svg width="28" xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4 class="device-name">Sistema de Sombreo</h4></div><div class="device-status--inactive device-status"><span class="status-dot"></span><span>Inactivo</span></div><div class="device-slider"><label class="slider-label" for="shade-intensity">Cobertura</label><input class="slider-input" id="shade-intensity" max="100" min="0" type="range" value="0" aria-label="Ajustar cobertura de sombreo"><span class="slider-value">0%</span></div><button class="btn btn-outline" aria-pressed="false"><span>Activar</span></button></div>
+                </div>
+                <div class="scenario-presets"><h3 class="presets-title">Escenarios Predefinidos</h3><div class="preset-grid"><button class="preset-card" aria-controls="device-controls"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4>Arranque Fase Vegetativa</h4></button><button class="preset-card" aria-controls="device-controls"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4>Respuesta a Calor Extremo</h4></button><button class="preset-card" aria-controls="device-controls"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><h4>Recuperación tras Riego Excesivo</h4></button></div></div>
+            </div>
+            <div class="sidebar" role="complementary" aria-labelledby="sidebar-heading">
+                <h3 class="sidebar-title" id="sidebar-heading">Estado y Trazabilidad</h3>
+                <div class="state-badges">
+                    <div class="state-badge state-badge--success"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Modo Simulación Activo</span></div>
+                    <div class="state-badge state-badge--info"><span class="badge-label">Sesión:</span><span class="badge-value">Instructor</span></div>
+                    <div class="state-badge state-badge--info"><span class="badge-label">Acciones:</span><span class="badge-value">12 registradas</span></div>
+                </div>
+                <div class="history-feed" role="log" aria-live="polite">
+                    <h4 class="feed-title">Historial de Pruebas</h4>
+                    <div class="feed-items">
+                        <div class="feed-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><div class="feed-content"><p class="feed-action">Bomba activada</p><p class="feed-meta">Hace 2 min • 75%</p></div></div>
+                        <div class="feed-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><div class="feed-content"><p class="feed-action">Ventilador ajustado</p><p class="feed-meta">Hace 5 min • 60%</p></div></div>
+                        <div class="feed-item"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle r="10" cx="12" cy="12"></circle></g></svg><div class="feed-content"><p class="feed-action">Escenario cargado</p><p class="feed-meta">Hace 15 min • Arranque</p></div></div>
+                    </div>
+                </div>
+                <div class="role-toggle">
+                    <h4 class="toggle-title">Acceso y Roles</h4>
+                    <div class="role-buttons"><button class="role-btn--active role-btn"><span>Instructor</span></button><button class="role-btn"><span>Estudiante</span></button><button class="role-btn"><span>Operador</span></button></div>
+                </div>
+                <div class="export-section"><button class="btn btn-primary"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m9 12v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10l5 5l5-5"></path></g></svg><span> Exportar Telemetría </span></button></div>
+            </div>
+         </div>
+    </section>
+
+    <section class="alerts-panel" id="alerts-section" role="region" aria-label="Alertas y historial">
+        <div class="alerts-main">
+            <h2 class="home-section-title">Panel de Alertas & Historial</h2>
+            <div class="filter-bar"><button class="btn btn-primary"><span>Todas</span></button><button class="btn btn-outline"><span>Alta Prioridad</span></button><button class="btn btn-outline"><span>Media</span></button><button class="btn btn-outline"><span>Resueltas</span></button></div>
+            <div class="timeline">
+                <article class="alert-item alert-item--danger" role="article"><div class="thumb"><img alt="Vista del área afectada" src="https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--high">ALTA</span></div><div class="content"><h3 class="title">Temperatura superó umbral crítico</h3><p class="meta">Hace 45 min • Sensor: Zona Norte • Valor: 29.4°C</p><p class="description"> La temperatura ambiente superó los 28°C óptimos. Se recomienda activar ventilación adicional y revisar sombreado. </p><div class="actions"><button class="btn btn-primary"><span>Activar Ventilación</span></button><button class="btn btn-outline"><span>Ver Análisis</span></button></div></div></article>
+                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Sistema de riego" src="https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Humedad del suelo descendiendo</h3><p class="meta">Hace 2 horas • Sensor: Bancal 3 • Valor: 35%</p><p class="description"> Nivel de humedad acercándose al umbral de atención (30%). Considerar programar riego en las próximas horas. </p><div class="actions"><button class="btn btn-primary"><span>Programar Riego</span></button><button class="btn btn-outline"><span>Historial</span></button></div></div></article>
+                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Sistema operativo" src="https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Riego automático completado exitosamente</h3><p class="meta"> Hace 6 horas • Sistema: Riego Principal • Duración: 25 min </p><p class="description"> Ciclo de riego completado según programación. Humedad del suelo elevada al 52%. Próximo ciclo programado para las 18:00. </p><div class="actions"><button class="btn btn-outline"><span>Ver Detalles</span></button></div></div></article>
+                <article class="alert-item--success alert-item" role="article"><div class="thumb"><img alt="Calibración exitosa" src="https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--success">ÉXITO</span></div><div class="content"><h3 class="title">Calibración de sensores completada</h3><p class="meta"> Hace 1 día • Sensores: Todos (8/8) • Estado: Óptimo </p><p class="description"> Mantenimiento preventivo completado. Todos los sensores calibrados y verificados. Precisión de lectura: ±0.1°C. </p><div class="actions"><button class="btn btn-outline"><span>Ver Informe</span></button></div></div></article>
+                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Ventilador en mantenimiento" src="https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Ventilador secundario requiere mantenimiento</h3><p class="meta"> Hace 2 días • Actuador: Ventilador Sur • Eficiencia: 82% </p><p class="description"> Eficiencia del ventilador por debajo del 85%. Programar revisión y limpieza de aspas en próxima sesión de mantenimiento. </p><div class="actions"><button class="btn btn-primary"><span>Programar Mantenimiento</span></button><button class="btn btn-outline"><span>Caso de Estudio</span></button></div></div></article>
+                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Acceso de estudiante" src="https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Nueva sesión de práctica iniciada</h3><p class="meta">Hace 3 días • Usuario: Grupo A • Modo: Estudiante</p><p class="description"> Sesión educativa iniciada con 15 participantes. Escenario: Gestión de crisis térmica. Duración estimada: 60 min. </p><div class="actions"><button class="btn btn-outline"><span>Ver Progreso</span></button></div></div></article>
+            </div>
+        </div>
+        <div class="alerts-sidebar">
+            <div class="summary-cards">
+                <div class="summary-card summary-card--danger"><p class="summary-number">2</p><p class="summary-label">Alertas Altas</p></div>
+                <div class="summary-card summary-card--warning"><p class="summary-number">3</p><p class="summary-label">Alertas Medias</p></div>
+                <div class="summary-card summary-card--success"><p class="summary-number">8</p><p class="summary-label">Resueltas Hoy</p></div>
+            </div>
+            <div class="quick-filters"><h3 class="sidebar-section-title">Filtros Rápidos</h3><button class="filter-chip"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span> Temperatura </span></button><button class="filter-chip"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span> Humedad </span></button><button class="filter-chip"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg><span> Cámaras </span></button><button class="filter-chip"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618zM12 12v.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span> Actuadores </span></button></div>
+            <div class="learning-panel"><h3 class="sidebar-section-title">Panel de Aprendizaje</h3><div class="learning-items"><div class="learning-item"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p>Caso: Crisis térmica en verano</p></div><div class="learning-item"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p>Guía: Interpretación de alertas</p></div><div class="learning-item"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 13h.01M12 6v3M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><p>Ejercicio: Respuesta a sequía</p></div></div></div>
+            <div class="export-actions"><button class="btn btn-primary"><svg width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m9 12v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10l5 5l5-5"></path></g></svg><span> Exportar CSV </span></button><button class="btn btn-outline"><svg width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3m9 12v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10l5 5l5-5"></path></g></svg><span> Generar PDF </span></button></div>
+        </div>
+    </section>
+
+    <footer class="footer-section" id="footer-greengauge">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-column footer-brand-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo"><svg class="footer-logo-icon" width="32" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8c0 5.5-4.78 10-10 10"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></g></svg></div>
+                        <span class="footer-brand-name">InvernaderoGD</span>
+                    </div>
+                    <p class="footer-brand-description"> Plataforma profesional de gestión proactiva para gemelos digitales de invernaderos. Soluciones innovadoras para estudiantes y operadores. </p>
+                    <div class="footer-social">
+                        <a class="footer-social-link" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn" href="https://linkedin.com"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"></path><circle r="2" cx="4" cy="4"></circle></g></svg></a>
+                        <a class="footer-social-link" rel="noopener noreferrer" target="_blank" aria-label="Twitter" href="https://twitter.com"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6c2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4c-.9-4.2 4-6.6 7-3.8c1.1 0 3-1.2 3-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                        <a class="footer-social-link" rel="noopener noreferrer" target="_blank" aria-label="GitHub" href="https://github.com"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5c.08-1.25-.27-2.48-1-3.5c.28-1.15.28-2.35 0-3.5c0 0-1 0-3 1.5c-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5c-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></g></svg></a>
+                        <a class="footer-social-link" rel="noopener noreferrer" target="_blank" aria-label="YouTube" href="https://youtube.com"><svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.1 24.1 0 0 1 0-10a2 2 0 0 1 1.4-1.4a49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10a2 2 0 0 1-1.4 1.4a49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15l5-3l-5-3z"></path></g></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h3 class="footer-column-title">Productos</h3><ul class="footer-links"><li class="footer-link-item"><a class="footer-link" href="#!"><span>Dashboard Principal</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Modelo 3D Interactivo</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Sistema de Alertas</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Monitoreo de Sensores</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Control de Actuadores</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Análisis de Datos</span></a></li></ul></div>
+                <div class="footer-column"><h3 class="footer-column-title">Recursos</h3><ul class="footer-links"><li class="footer-link-item"><a class="footer-link" href="#!"><span>Documentación</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Tutoriales</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Guías de Usuario</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>API Reference</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Casos de Estudio</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Centro de Ayuda</span></a></li></ul></div>
+                <div class="footer-column"><h3 class="footer-column-title">Compañía</h3><ul class="footer-links"><li class="footer-link-item"><a class="footer-link" href="#!"><span>Acerca de Nosotros</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Equipo</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Carreras</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Blog</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Contacto</span></a></li><li class="footer-link-item"><a class="footer-link" href="#!"><span>Soporte</span></a></li></ul></div>
+                <div class="footer-column footer-contact-column">
+                    <h3 class="footer-column-title">Contacto</h3>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item"><svg class="footer-contact-icon" width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" rx="2" width="20" height="16"></rect></g></svg><a class="footer-contact-link" href="mailto:info@invernaderogd.com"><span> info@invernaderogd.com </span></a></li>
+                        <li class="footer-contact-item"><svg class="footer-contact-icon" width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><a class="footer-contact-link" href="tel:+34900123456"><span> +34 900 123 456 </span></a></li>
+                        <li class="footer-contact-item"><svg class="footer-contact-icon" width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.97 9.304A8 8 0 0 0 2 10c0 4.69 4.887 9.562 7.022 11.468m12.356-4.842a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"></path><circle r="3" cx="10" cy="10"></circle></g></svg><span class="footer-contact-text">Viedma, Argentina</span></li>
+                    </ul>
+                    <div class="footer-cta"><p class="footer-cta-text">¿Listo para empezar?</p><a class="btn btn-primary" href="#!"><span>Solicitar Demo</span></a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright"> © 2025 InvernaderoGD. Todos los derechos reservados. </p>
+                    <ul class="footer-legal">
+                        <li class="footer-legal-item"><a class="footer-legal-link" href="#!"><span>Política de Privacidad</span></a></li>
+                        <li class="footer-legal-item"><a class="footer-legal-link" href="#!"><span>Términos de Servicio</span></a></li>
+                        <li class="footer-legal-item"><a class="footer-legal-link" href="#!"><span>Política de Cookies</span></a></li>
+                        <li class="footer-legal-item"><a class="footer-legal-link" href="#!"><span>Accesibilidad</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

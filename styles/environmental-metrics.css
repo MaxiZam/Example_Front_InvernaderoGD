@@ -1,0 +1,129 @@
+/* --- environmental-metrics.css --- */
+
+.environmental-metrics {
+    row-gap: var(--spacing-lg);
+    column-gap: var(--spacing-xl);
+    margin: var(--section-gap) auto 0;
+    display: grid;
+    padding: var(--spacing-2xl);
+    max-width: var(--content-max-width);
+    box-shadow: var(--shadow-level-1);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    /* Grid structure from JSON */
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 420px;
+    grid-template-areas:
+        "visual meter"
+        "humidity controls";
+}
+
+/* Grid Area Assignments */
+.visual { grid-area: visual; position: relative; border-radius: var(--border-radius-lg); overflow: hidden; }
+.meter { grid-area: meter; padding: var(--spacing-lg); background-color: var(--color-surface-elevated); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: var(--spacing-md); }
+.humidity { grid-area: humidity; padding: var(--spacing-lg); background-color: var(--color-surface-elevated); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: var(--spacing-md); }
+/* Reusing .controls class - ensure no conflicts or use more specific selector if needed */
+.environmental-metrics > .controls {
+    grid-area: controls;
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+
+/* Visual Area */
+.visual-viewport { position: relative; border-radius: var(--border-radius-lg); overflow: hidden; aspect-ratio: 16 / 9; background-color: #eee; }
+.visual-viewport img { width: 100%; height: 100%; object-fit: cover; }
+
+.visual-scrim { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--spacing-lg); background: linear-gradient(to top, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0) 100%); color: white; }
+.visual-scrim .home-section-title { border-bottom: none; padding-bottom: 0; color: white; margin-bottom: var(--spacing-xs); }
+.visual-scrim .home-section-content { color: hsla(0, 0%, 100%, 0.8); font-size: var(--font-size-sm); max-width: none; /* Override max-width */ }
+
+.camera-inset { position: absolute; bottom: var(--spacing-md); right: var(--spacing-md); width: clamp(100px, 20%, 120px); aspect-ratio: 4 / 3; border-radius: var(--border-radius-md); overflow: hidden; border: 2px solid white; box-shadow: var(--shadow-level-2); }
+.camera-inset img { width: 100%; height: 100%; object-fit: cover; }
+
+.camera-badge { /* Reusing styles */ position: absolute; top: var(--spacing-xs); left: var(--spacing-xs); display: inline-flex; align-items: center; gap: var(--spacing-xs); padding: 1px var(--spacing-xs); font-size: 0.65rem; font-weight: var(--font-weight-semibold); color: white; background-color: var(--status-danger); border-radius: var(--border-radius-full); }
+.camera-badge svg { width: 10px; height: 10px; }
+
+/* Meter Area (Gauge) */
+.meter-title { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); text-align: center; }
+
+.gauge-container { position: relative; width: 100%; max-width: 250px; margin: 0 auto; }
+.gauge { display: block; width: 100%; }
+.gauge-bg { stroke: var(--color-border); }
+.gauge-fill { stroke: var(--color-primary); transition: stroke-dashoffset 0.5s ease; }
+.gauge-dot { fill: var(--color-primary); transform-origin: 100px 100px; transition: transform 0.5s ease; /* JS needed for position */ }
+
+.gauge-reading { position: absolute; bottom: 5px; /* Adjusted position */ left: 50%; transform: translateX(-50%); text-align: center; }
+.gauge-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.gauge-value span:last-child { font-size: var(--font-size-base); font-weight: var(--font-weight-regular); color: var(--text-muted); }
+.gauge-label { font-size: var(--font-size-sm); color: var(--text-muted); }
+
+.gauge-range { display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--text-muted); padding: 0 var(--spacing-sm); max-width: 250px; margin: 0 auto; }
+.range-optimal { font-weight: var(--font-weight-medium); color: var(--status-success); }
+
+.gauge-trend { display: flex; align-items: center; justify-content: center; gap: var(--spacing-xs); font-size: var(--font-size-xs); color: var(--text-muted); margin-top: var(--spacing-sm); }
+.gauge-trend svg { width: 12px; height: 12px; } /* Trend icon size */
+
+
+/* Humidity Area (Chart) */
+.chart-title { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); text-align: center; }
+.chart-container { width: 100%; position: relative; }
+.line-chart { display: block; width: 100%; }
+.line-chart text { fill: var(--text-muted); font-size: 10px; }
+.line-chart polyline { fill: url(#chartGradient); stroke: var(--color-primary); stroke-width: 2; }
+.line-chart circle { fill: var(--color-accent); /* Use accent color */ stroke: white; stroke-width: 2; }
+.line-chart rect { fill: var(--status-muted); opacity: 0.1; } /* Optimal range background */
+
+.chart-desc { font-size: var(--font-size-sm); text-align: center; color: var(--text-muted); margin-top: var(--spacing-xs); }
+.chart-trend { font-size: var(--font-size-xs); color: var(--text-muted); text-align: center; margin-top: var(--spacing-sm); }
+
+/* Controls Area (Soil Humidity) */
+.controls-title { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); text-align: center; }
+
+.soil-gauge { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.soil-reading { display: flex; justify-content: space-between; align-items: baseline; }
+.soil-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.soil-value span:last-child { font-size: var(--font-size-base); font-weight: var(--font-weight-regular); color: var(--text-muted); }
+.soil-label { font-size: var(--font-size-sm); color: var(--text-muted); }
+
+.soil-bar { width: 100%; height: 8px; background-color: var(--color-border); border-radius: var(--border-radius-full); overflow: hidden; }
+.soil-fill { height: 100%; background-color: var(--color-primary); border-radius: var(--border-radius-full); transition: width 0.5s ease; }
+
+.soil-markers { display: flex; justify-content: space-between; padding: 0 2px; }
+.marker { font-size: var(--font-size-xs); position: relative; padding-top: 6px; }
+.marker::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 4px; background-color: currentColor; }
+.marker--danger { color: var(--status-danger); }
+.marker--warning { color: var(--status-warning); }
+.marker--success { color: var(--status-success); }
+
+.quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
+.quick-actions .btn { font-size: var(--font-size-sm); } /* Smaller buttons */
+
+.alert-snippet { padding: var(--spacing-sm) var(--spacing-md); background-color: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--border-radius-md); text-align: center; }
+.snippet-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); color: var(--text-muted); }
+.snippet-text { font-size: var(--font-size-sm); }
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .environmental-metrics {
+        grid-template-columns: 1fr;
+        grid-template-areas: "visual" "meter" "humidity" "controls";
+    }
+     .meter, .humidity, .environmental-metrics > .controls {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .environmental-metrics { padding: var(--spacing-lg); }
+    .quick-actions { grid-template-columns: 1fr; }
+}
