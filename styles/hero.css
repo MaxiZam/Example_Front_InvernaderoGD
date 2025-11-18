@@ -59,7 +59,7 @@
     box-shadow: var(--shadow-level-2);
     border: 1px solid var(--color-border);
     aspect-ratio: 1 / 1; /* Make it square-ish */
-    max-height: 500px; /* Limit height */
+    max-height: 750px; /* Limit height */
 }
 
 .viewport__3d {

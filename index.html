@@ -19,7 +19,7 @@
 <body>
     <nav class="navigation" id="navigation-main">
         <div class="navigation-container">
-            <a class="navigation-logo" aria-label="InvernaderoGD - Inicio" href="/">
+            <a class="navigation-logo" aria-label="InvernaderoGD - Inicio" href="">
                 <svg class="navigation-logo-icon" width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8c0 5.5-4.78 10-10 10"></path>
@@ -106,7 +106,7 @@
         <div class="hero__visual">
             <div class="viewport" aria-label="Vista previa del modelo 3D del invernadero">
                 <div class="viewport__3d">
-                    <img alt="Vista interior del invernadero con sistema hidropónico y cultivos" src=""> <!-- https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+                    <img alt="Vista interior del invernadero con sistema hidropónico y cultivos" src="imagenes/foto_invernadero.png"> <!-- https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
                     <div class="actuator-badges">
                         <div class="actuator-badge actuator-badge--success" role="status" aria-label="Bomba operativa">
                             <svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -117,13 +117,6 @@
                             <span>Ventilador</span>
                         </div>
                     </div>
-                </div>
-                <div class="camera-window" aria-label="Transmisión de cámara en vivo">
-                    <div class="camera-status">
-                        <svg width="20" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg>
-                        <span>En Vivo</span>
-                    </div>
-                    <img alt="Vista en vivo del cultivo desde cámara del invernadero" src=""> <!-- https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
                 </div>
             </div>
         </div>
@@ -136,10 +129,6 @@
                 <div class="canvas-overlay">
                     <svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 24 24"><path d="M21 16.008V7.99a1.98 1.98 0 0 0-1-1.717l-7-4.008a2.02 2.02 0 0 0-2 0L4 6.273c-.619.355-1 1.01-1 1.718v8.018c0 .709.381 1.363 1 1.717l7 4.008a2.02 2.02 0 0 0 2 0l7-4.008c.619-.355 1-1.01 1-1.718M12 22V12m0 0l8.73-5.04m-17.46 0L12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     <p>Modelo 3D Interactivo</p>
-                </div>
-                <div class="camera" aria-label="Transmisión de cámara integrada">
-                    <svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg>
-                    <span>EN VIVO</span>
                 </div>
             </div>
             <div class="actuators">
@@ -164,12 +153,10 @@
         </div>
     </section>
 
-    <section class="container" id="model-section" role="region" aria-labelledby="model-heading">
+    <!--<section class="container" id="model-section" role="region" aria-labelledby="model-heading">
         <div class="stage">
             <div class="stage-canvas" role="img" aria-label="Modelo 3D interactivo del invernadero con actuadores"><img alt="Vista panorámica del interior del invernadero" src=""><div class="stage-controls"><button class="stage-control" aria-label="Rotar modelo"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0a2.34 2.34 0 0 0 3.319 1.915a2.34 2.34 0 0 1 2.33 4.033a2.34 2.34 0 0 0 0 3.831a2.34 2.34 0 0 1-2.33 4.033a2.34 2.34 0 0 0-3.319 1.915a2.34 2.34 0 0 1-4.659 0a2.34 2.34 0 0 0-3.32-1.915a2.34 2.34 0 0 1-2.33-4.033a2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle r="3" cx="12" cy="12"></circle></g></svg></button></div></div>
-        <!-- https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
             <div class="camera-overlay"><img alt="Cámara en vivo del cultivo" src=""><div class="camera-label"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg><span>EN VIVO</span></div></div>
-        <!-- https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
         </div>
         <div class="context">
             <h2 class="home-section-title" id="model-heading">Modelo 3D & Actuadores</h2>
@@ -179,7 +166,10 @@
             <div class="context-actions"><button class="btn btn-primary"><span>Acceder a Ejercicios</span></button><button class="btn btn-outline"><span>Ver Manual</span></button></div>
             <div class="context-confidence"><p class="confidence-label">Integridad de Datos</p><div class="confidence-indicators"><span class="confidence-badge">Latencia: 12ms</span><span class="confidence-badge">Sensores: 8/8</span><span class="confidence-badge">Calidad: Alta</span></div></div>
         </div>
-    </section>
+    </section>-->
+
+    <!-- https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
+    <!-- https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500 -->
 
     <section class="camera-section" id="camera-section" role="region" aria-labelledby="camera-heading">
         <div class="main-stream">
@@ -203,28 +193,85 @@
     <section class="environmental-metrics" id="metrics-section" role="region" aria-labelledby="metrics-heading">
         <div class="visual">
             <div class="visual-viewport"><img alt="Vista del sistema de cultivo hidropónico" src=""><div class="visual-scrim"><h2 class="home-section-title" id="metrics-heading">Métricas Ambientales</h2><p class="home-section-content"> Estado en tiempo real del invernadero con seguimiento continuo de condiciones óptimas </p></div></div>
-            <div class="camera-inset"><img alt="Monitoreo en vivo del cultivo" src=""><div class="camera-badge"><svg width="14" xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle r="3" cx="12" cy="13"></circle></g></svg><span>EN VIVO</span></div></div>
         </div>
         <div class="meter">
             <h3 class="meter-title">Temperatura</h3>
             <div class="gauge-container">
-                <svg class="gauge" viewBox="0 0 200 120" aria-hidden="true"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"></path><path class="gauge-fill" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="75.36"></path><circle class="gauge-dot" r="8" cx="100" cy="100" fill="currentColor"></circle></svg>
-                <div class="gauge-reading"><p class="gauge-value"><span> 24.6 </span><span style="font-size: var(--font-size-xl);">°C</span></p><p class="gauge-label">Estable</p></div>
+                <svg class="gauge" viewBox="0 0 200 120" aria-hidden="true">
+                    <path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"></path>
+                    <path class="gauge-fill" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="75.36"></path>
+                    <circle class="gauge-dot" r="8" cx="100" cy="100" fill="currentColor"></circle>
+                </svg>
+                
+                <div class="gauge-reading">
+                    <p class="gauge-value">
+                        <span> 24.6 </span>
+                        <span class="gauge-unit">°C</span> 
+                    </p>
+                    <p class="gauge-label">Estable</p>
+                </div>
             </div>
-            <div class="gauge-range"><span>20°C</span><span class="range-optimal">Óptimo</span><span>28°C</span></div>
-            <p class="gauge-trend"><svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24"><path d="m5 12l7-7l7 7m-7 7V5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span> Subida lenta (últimas 3h) </span></p>
+            
+            <div class="gauge-range">
+                <span class="range-min">20°C</span>
+                <span class="range-optimal">Óptimo</span>
+                <span class="range-max">28°C</span>
+            </div>
+            
+            <p class="gauge-trend">
+                <svg width="16" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24">
+                    <path d="m5 12l7-7l7 7m-7 7V5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span> Subida lenta (últimas 3h) </span>
+            </p>
         </div>
         <div class="humidity">
             <h3 class="chart-title">Humedad Relativa</h3>
-            <div class="chart-container"><svg class="line-chart" viewBox="0 0 400 200" aria-describedby="humidity-desc"><defs><linearGradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color: var(--color-primary); stop-opacity: 0.2;"></stop><stop offset="100%" style="stop-color: var(--color-primary); stop-opacity: 0;"></stop></linearGradient></defs><rect x="0" y="60" fill="var(--status-muted)" width="400" height="60" opacity="0.15"></rect><text x="5" y="55" fill="var(--text-muted)" font-size="10"><span>70%</span></text><text x="5" y="125" fill="var(--text-muted)" font-size="10"><span>50%</span></text><polyline fill="url(#chartGradient)" points="0,100 50,95 100,90 150,85 200,95 250,100 300,90 350,85 400,90" stroke="var(--color-primary)" stroke-width="3"></polyline><circle r="5" cx="400" cy="90" fill="var(--color-accent)"></circle></svg><p class="chart-desc" id="humidity-desc"> 62% — Dentro del rango óptimo (50–70%) </p></div>
+            <div class="chart-container">
+                <svg class="line-chart" viewBox="0 0 450 200" aria-describedby="humidity-desc">
+                    
+                    <rect x="40" y="10" fill="var(--status-muted)" width="400" height="36" opacity="0.15"></rect>
+                    <rect x="40" y="82" fill="var(--status-muted)" width="400" height="36" opacity="0.15"></rect>
+                    <rect x="40" y="154" fill="var(--status-muted)" width="400" height="36" opacity="0.15"></rect>
+
+                    <line x1="40" y1="28" x2="440" y2="28" stroke="var(--status-danger)" stroke-width="1" stroke-dasharray="4 2"></line>
+        
+                    <line x1="40" y1="136" x2="440" y2="136" stroke="var(--status-danger)" stroke-width="1" stroke-dasharray="4 2"></line>
+
+                    <text x="35" y="10" fill="var(--text-muted)" font-size="10" text-anchor="end">100%</text>
+                    <text x="35" y="28" fill="var(--text-muted)" font-size="10" text-anchor="end">90%</text>
+                    <text x="35" y="46" fill="var(--text-muted)" font-size="10" text-anchor="end">80%</text>
+                    <text x="35" y="64" fill="var(--text-muted)" font-size="10" text-anchor="end">70%</text>
+                    <text x="35" y="82" fill="var(--text-muted)" font-size="10" text-anchor="end">60%</text>
+                    <text x="35" y="100" fill="var(--text-muted)" font-size="10" text-anchor="end">50%</text>
+                    <text x="35" y="118" fill="var(--text-muted)" font-size="10" text-anchor="end">40%</text>
+                    <text x="35" y="136" fill="var(--text-muted)" font-size="10" text-anchor="end">30%</text>
+                    <text x="35" y="154" fill="var(--text-muted)" font-size="10" text-anchor="end">20%</text>
+                    <text x="35" y="172" fill="var(--text-muted)" font-size="10" text-anchor="end">10%</text>
+                    <text x="35" y="190" fill="var(--text-muted)" font-size="10" text-anchor="end">0%</text>
+                    
+                    <line x1="40" y1="190" x2="440" y2="190" stroke="var(--color-border)" stroke-width="1"></line>
+                    <line x1="40" y1="10" x2="40" y2="190" stroke="var(--color-border)" stroke-width="1"></line>
+
+                    <polyline 
+                        fill="url(#chartGradient)" 
+                        points="40,38 90,46 140,64 190,109 240,82 290,64 340,46 390,48 440,74" 
+                        stroke="var(--color-primary)" 
+                        stroke-width="3">
+                    </polyline>
+                    
+                    <circle r="5" cx="440" cy="74" fill="var(--color-primary)"></circle>
+                </svg>
+                <p class="chart-desc" id="humidity-desc"> 62% — Dentro del rango óptimo (30–90%) </p>
+            </div>
             <p class="chart-trend">Tendencia descendente leve (últimas 3h)</p>
         </div>
         <div class="controls">
             <h3 class="controls-title">Humedad del Suelo</h3>
             <div class="soil-gauge">
                 <div class="soil-reading"><p class="soil-value"><span> 45 </span><span style="font-size: var(--font-size-lg);">%</span></p><p class="soil-label">Condición Estable</p></div>
-                <div class="soil-bar"><div class="soil-fill" role="progressbar" aria-label="Humedad del suelo al 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" style="width: 45%;"></div></div>
-                <div class="soil-markers"><span class="marker marker--danger">30%</span><span class="marker marker--warning">40%</span><span class="marker marker--success">60%</span></div>
+                <div class="soil-bar"><div class="soil-fill" role="progressbar" aria-label="Humedad del suelo al 62%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" style="width: 45%;"></div></div>
+                <div class="soil-markers"><span class="marker marker--danger">0%</span><span class="marker marker--success">50%</span><span class="marker marker--danger">100%</span></div>
             </div>
             <div class="quick-actions"><button class="btn btn-primary"><span>Riego Manual</span></button><button class="btn btn-outline"><span>Ver Historial</span></button></div>
             <div class="alert-snippet"><p class="snippet-label">Última Alerta</p><p class="snippet-text">Sin alertas críticas en las últimas 24h</p></div>
@@ -234,7 +281,12 @@
     <section class="irrigation" id="irrigation-section" role="region" aria-labelledby="irrigation-heading">
         <div class="gauge-card">
             <h2 class="home-section-title" id="irrigation-heading"> Humedad del Suelo & Riego </h2>
-            <div class="circular-gauge"><svg class="gauge-svg" viewBox="0 0 200 200"><circle r="80" cx="100" cy="100" fill="none" stroke="var(--color-border)" stroke-width="16"></circle><circle r="80" cx="100" cy="100" fill="none" stroke="var(--status-success)" transform="rotate(-90 100 100)" stroke-width="16" stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="276.32"></circle></svg><div class="gauge-center"><p class="gauge-percent"><span> 45 </span><span style="font-size: var(--font-size-xl);">%</span></p><p class="gauge-status">Estable</p></div></div>
+            <div class="circular-gauge">
+                <svg class="gauge-svg" viewBox="0 0 200 200">
+                    <circle r="80" cx="100" cy="100" fill="none" stroke="var(--color-border)" stroke-width="16"></circle>
+                    <circle r="80" cx="100" cy="100" fill="none" stroke="var(--status-success)" transform="rotate(-90 100 100)" stroke-width="16" stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="266.32"></circle>
+                </svg>
+                <div class="gauge-center"><p class="gauge-percent"><span> 45 </span><span style="font-size: var(--font-size-xl);">%</span></p><p class="gauge-status">Estable</p></div></div>
             <div class="status-summary"><p class="summary-text"> Nivel de humedad dentro del rango óptimo. Próximo riego programado para las 18:00. </p><div class="threshold-indicators"><div class="threshold-item"><span class="threshold-color threshold-color--success"></span><span class="threshold-label">Óptimo: 60–40%</span></div><div class="threshold-item"><span class="threshold-color threshold-color--warning"></span><span class="threshold-label">Atención: 39–30%</span></div><div class="threshold-item"><span class="threshold-color threshold-color--danger"></span><span class="threshold-label">Crítico: &lt;30%</span></div></div></div>
             <div class="context-guide"><h3 class="guide-title">Contexto Educativo</h3><p class="guide-text"> La humedad del suelo es crucial para el crecimiento óptimo. Valores por debajo del 30% activan alertas automáticas y recomendaciones de riego inmediato. </p><a class="guide-link" href="#!"><span>Ver guía completa de interpretación</span></a></div>
         </div>
@@ -339,7 +391,6 @@
                         <li class="footer-contact-item"><svg class="footer-contact-icon" width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><a class="footer-contact-link" href="tel:+34900123456"><span> +34 900 123 456 </span></a></li>
                         <li class="footer-contact-item"><svg class="footer-contact-icon" width="18" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.97 9.304A8 8 0 0 0 2 10c0 4.69 4.887 9.562 7.022 11.468m12.356-4.842a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"></path><circle r="3" cx="10" cy="10"></circle></g></svg><span class="footer-contact-text">Viedma, Argentina</span></li>
                     </ul>
-                    <div class="footer-cta"><p class="footer-cta-text">¿Listo para empezar?</p><a class="btn btn-primary" href="#!"><span>Solicitar Demo</span></a></div>
                 </div>
             </div>
             <div class="footer-bottom">

@@ -21,17 +21,33 @@
 /* Grid Area Assignments */
 .visual { grid-area: visual; position: relative; border-radius: var(--border-radius-lg); overflow: hidden; }
 .meter { grid-area: meter; padding: var(--spacing-lg); background-color: var(--color-surface-elevated); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: var(--spacing-md); }
-.humidity { grid-area: humidity; padding: var(--spacing-lg); background-color: var(--color-surface-elevated); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: var(--spacing-md); }
+.humidity { 
+    grid-area: humidity; 
+    padding: var(--spacing-lg); 
+    background-color: var(--color-surface-elevated); 
+    border: 1px solid var(--color-border); 
+    border-radius: var(--border-radius-lg); 
+    display: flex; 
+    flex-direction: column; 
+    gap: var(--spacing-md); }
 /* Reusing .controls class - ensure no conflicts or use more specific selector if needed */
 .environmental-metrics > .controls {
+    /* Propiedades existentes */
     grid-area: controls;
     padding: var(--spacing-lg);
     background-color: var(--color-surface-elevated);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
+    
+    /* MODIFICACIONES CLAVE PARA EL STRETCHING */
+    height: 100%; /* Asegura que ocupe toda la altura de su grid-area */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    /* Cambiado de 'gap' fijo a distribución justificada para usar el espacio sobrante */
+    justify-content: space-between; 
+    
+    /* El 'gap' solo se mantiene si necesitas espaciado dentro de elementos que no se estiran */
+    /* gap: var(--spacing-lg); /* Si se usa justify-content: space-between, el gap se maneja implícitamente */
 }
 
 
@@ -52,18 +68,42 @@
 /* Meter Area (Gauge) */
 .meter-title { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); text-align: center; }
 
-.gauge-container { position: relative; width: 100%; max-width: 250px; margin: 0 auto; }
+.gauge-container { position: relative; width: 100%; max-width: 250px; margin: 0 auto; text-align: center;}
 .gauge { display: block; width: 100%; }
 .gauge-bg { stroke: var(--color-border); }
 .gauge-fill { stroke: var(--color-primary); transition: stroke-dashoffset 0.5s ease; }
 .gauge-dot { fill: var(--color-primary); transform-origin: 100px 100px; transition: transform 0.5s ease; /* JS needed for position */ }
 
-.gauge-reading { position: absolute; bottom: 5px; /* Adjusted position */ left: 50%; transform: translateX(-50%); text-align: center; }
-.gauge-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.gauge-reading {
+    /* Posicionamiento absoluto para centrar el texto sobre el SVG */
+    position: absolute;
+    top: 50%; /* Lo mueve a la mitad vertical */
+    left: 50%; /* Lo mueve a la mitad horizontal */
+    transform: translate(-50%, -10%); /* Ajuste fino: Mover a la izquierda y ligeramente hacia arriba */
+    line-height: var(--line-height-tight); 
+}
+.gauge-value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    display: block; /* Asegura que el valor esté en su propia línea */
+}
 .gauge-value span:last-child { font-size: var(--font-size-base); font-weight: var(--font-weight-regular); color: var(--text-muted); }
+.gauge-unit {
+    font-size: var(--font-size-base); /* Tamaño de la unidad (°C) */
+    font-weight: var(--font-weight-regular);
+    color: var(--text-muted);
+    /* Puedes quitar 'display: block;' de .gauge-value y hacer esto inline si lo prefieres */
+}
 .gauge-label { font-size: var(--font-size-sm); color: var(--text-muted); }
 
-.gauge-range { display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--text-muted); padding: 0 var(--spacing-sm); max-width: 250px; margin: 0 auto; }
+.gauge-range { 
+    display: flex; 
+    justify-content: space-between; 
+    color: var(--text-muted);
+    max-width: 250px; 
+    margin: 0 auto; 
+    width: 100%;
+}
 .range-optimal { font-weight: var(--font-weight-medium); color: var(--status-success); }
 
 .gauge-trend { display: flex; align-items: center; justify-content: center; gap: var(--spacing-xs); font-size: var(--font-size-xs); color: var(--text-muted); margin-top: var(--spacing-sm); }
@@ -85,7 +125,14 @@
 /* Controls Area (Soil Humidity) */
 .controls-title { font-size: var(--font-size-base); font-weight: var(--font-weight-medium); text-align: center; }
 
-.soil-gauge { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.soil-gauge {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    /* Permite que el bloque crezca si es necesario, pero no es la fuente principal del estiramiento */
+    flex-grow: 1; 
+    justify-content: center; /* Centrar el indicador dentro del espacio disponible si se estira */
+}
 .soil-reading { display: flex; justify-content: space-between; align-items: baseline; }
 .soil-value { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
 .soil-value span:last-child { font-size: var(--font-size-base); font-weight: var(--font-weight-regular); color: var(--text-muted); }
