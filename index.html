@@ -124,12 +124,13 @@
 
     <section class="quick-access" id="quick-access-section" role="region" aria-labelledby="quick-access-heading">
         <div class="viewport">
-            <div class="canvas" aria-label="Modelo 3D en vivo del invernadero">
-                <!--<video src="https://videos.pexels.com/video-files/7332202/7332202-hd_1280_720_25fps.mp4" loop="true" muted="true" autoPlay="true" aria-hidden="true" playsInline="true"></video>-->
-                <div class="canvas-overlay">
-                    <svg width="48" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 24 24"><path d="M21 16.008V7.99a1.98 1.98 0 0 0-1-1.717l-7-4.008a2.02 2.02 0 0 0-2 0L4 6.273c-.619.355-1 1.01-1 1.718v8.018c0 .709.381 1.363 1 1.717l7 4.008a2.02 2.02 0 0 0 2 0l7-4.008c.619-.355 1-1.01 1-1.718M12 22V12m0 0l8.73-5.04m-17.46 0L12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    <p>Modelo 3D Interactivo</p>
-                </div>
+            <div class="canvas" aria-label="Vista del invernadero">
+                <img 
+                    src="imagenes/modelo3D_invernadero.png" 
+                    alt="Imagen del invernadero automatizado" 
+                    class="static-image"
+                    style="width: 100%; height: auto; display: block; object-fit: cover;"
+                >
             </div>
             <div class="actuators">
                 <div class="actuator actuator--active"><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Bomba</span><span class="actuator__status">Activo</span></div>
@@ -191,9 +192,78 @@
     </section>
 
     <section class="environmental-metrics" id="metrics-section" role="region" aria-labelledby="metrics-heading">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <div class="visual">
-            <div class="visual-viewport"><img alt="Vista del sistema de cultivo hidropónico" src=""><div class="visual-scrim"><h2 class="home-section-title" id="metrics-heading">Métricas Ambientales</h2><p class="home-section-content"> Estado en tiempo real del invernadero con seguimiento continuo de condiciones óptimas </p></div></div>
+            <div class="visual-viewport" style="position: relative; height: 300px; width: 100%; background-color: #ffffff;">
+                
+                <canvas id="temperatureChart"></canvas>
+            </div>
         </div>
+
+        <script>
+            // 1. Datos extendidos para mostrar más barras
+            const labels = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+            const dataValues = [18.5, 20.5, 23.0, 25.5, 27.5, 29.0, 28.5, 27.0, 24.0, 21.5, 19.0];
+
+            // 2. Función para asignar color según tu lógica
+            const getBarColor = (temp) => {
+                if (temp < 20 || temp > 28) {
+                    return 'rgba(255, 99, 132, 0.8)'; // Rojo (Fuera de rango)
+                } else if ((temp >= 20 && temp < 22) || (temp > 26 && temp <= 28)) {
+                    return 'rgba(255, 159, 64, 0.8)'; // Naranja (Cerca del límite)
+                } else {
+                    return 'rgba(75, 192, 192, 0.8)'; // Verde (Ideal/En medio)
+                }
+            };
+
+            // Generamos los arreglos de colores para fondo y borde automáticamente
+            const backgroundColors = dataValues.map(temp => getBarColor(temp));
+            const borderColors = dataValues.map(temp => getBarColor(temp).replace('0.8', '1')); // Mismo color pero sólido para el borde
+
+            const ctx = document.getElementById('temperatureChart').getContext('2d');
+            const temperatureChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Temperatura (°C)',
+                        data: dataValues,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        barPercentage: 0.7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw + '°C';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            suggestedMin: 15,
+                            suggestedMax: 32,
+                            grid: { color: '#f0f0f0' },
+                            title: { display: true, text: 'Grados Celsius' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        </script>
         <div class="meter">
             <h3 class="meter-title">Temperatura</h3>
             <div class="gauge-container">
@@ -345,12 +415,12 @@
             <h2 class="home-section-title">Panel de Alertas & Historial</h2>
             <div class="filter-bar"><button class="btn btn-primary"><span>Todas</span></button><button class="btn btn-outline"><span>Alta Prioridad</span></button><button class="btn btn-outline"><span>Media</span></button><button class="btn btn-outline"><span>Resueltas</span></button></div>
             <div class="timeline">
-                <article class="alert-item alert-item--danger" role="article"><div class="thumb"><img alt="Vista del área afectada" src="https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--high">ALTA</span></div><div class="content"><h3 class="title">Temperatura superó umbral crítico</h3><p class="meta">Hace 45 min • Sensor: Zona Norte • Valor: 29.4°C</p><p class="description"> La temperatura ambiente superó los 28°C óptimos. Se recomienda activar ventilación adicional y revisar sombreado. </p><div class="actions"><button class="btn btn-primary"><span>Activar Ventilación</span></button><button class="btn btn-outline"><span>Ver Análisis</span></button></div></div></article>
-                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Sistema de riego" src="https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Humedad del suelo descendiendo</h3><p class="meta">Hace 2 horas • Sensor: Bancal 3 • Valor: 35%</p><p class="description"> Nivel de humedad acercándose al umbral de atención (30%). Considerar programar riego en las próximas horas. </p><div class="actions"><button class="btn btn-primary"><span>Programar Riego</span></button><button class="btn btn-outline"><span>Historial</span></button></div></div></article>
-                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Sistema operativo" src="https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Riego automático completado exitosamente</h3><p class="meta"> Hace 6 horas • Sistema: Riego Principal • Duración: 25 min </p><p class="description"> Ciclo de riego completado según programación. Humedad del suelo elevada al 52%. Próximo ciclo programado para las 18:00. </p><div class="actions"><button class="btn btn-outline"><span>Ver Detalles</span></button></div></div></article>
-                <article class="alert-item--success alert-item" role="article"><div class="thumb"><img alt="Calibración exitosa" src="https://images.pexels.com/photos/10269716/pexels-photo-10269716.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--success">ÉXITO</span></div><div class="content"><h3 class="title">Calibración de sensores completada</h3><p class="meta"> Hace 1 día • Sensores: Todos (8/8) • Estado: Óptimo </p><p class="description"> Mantenimiento preventivo completado. Todos los sensores calibrados y verificados. Precisión de lectura: ±0.1°C. </p><div class="actions"><button class="btn btn-outline"><span>Ver Informe</span></button></div></div></article>
-                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Ventilador en mantenimiento" src="https://images.pexels.com/photos/7299994/pexels-photo-7299994.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Ventilador secundario requiere mantenimiento</h3><p class="meta"> Hace 2 días • Actuador: Ventilador Sur • Eficiencia: 82% </p><p class="description"> Eficiencia del ventilador por debajo del 85%. Programar revisión y limpieza de aspas en próxima sesión de mantenimiento. </p><div class="actions"><button class="btn btn-primary"><span>Programar Mantenimiento</span></button><button class="btn btn-outline"><span>Caso de Estudio</span></button></div></div></article>
-                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Acceso de estudiante" src="https://images.pexels.com/photos/15314337/pexels-photo-15314337.jpeg?auto=compress&cs=tinysrgb&w=1500"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Nueva sesión de práctica iniciada</h3><p class="meta">Hace 3 días • Usuario: Grupo A • Modo: Estudiante</p><p class="description"> Sesión educativa iniciada con 15 participantes. Escenario: Gestión de crisis térmica. Duración estimada: 60 min. </p><div class="actions"><button class="btn btn-outline"><span>Ver Progreso</span></button></div></div></article>
+                <article class="alert-item alert-item--danger" role="article"><div class="thumb"><img alt="Vista del área afectada" src="imagenes/danger.png"><span class="priority-badge priority-badge--high">ALTA</span></div><div class="content"><h3 class="title">Temperatura superó umbral crítico</h3><p class="meta">Hace 45 min • Sensor: Zona Norte • Valor: 29.4°C</p><p class="description"> La temperatura ambiente superó los 28°C óptimos. Se recomienda activar ventilación adicional y revisar sombreado. </p><div class="actions"><button class="btn btn-primary"><span>Activar Ventilación</span></button><button class="btn btn-outline"><span>Ver Análisis</span></button></div></div></article>
+                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Sistema de riego" src="imagenes/humedad.png"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Humedad del suelo descendiendo</h3><p class="meta">Hace 2 horas • Sensor: Bancal • Valor: 35%</p><p class="description"> Nivel de humedad acercándose al umbral de atención (30%). Considerar programar riego en las próximas horas. </p><div class="actions"><button class="btn btn-primary"><span>Programar Riego</span></button><button class="btn btn-outline"><span>Historial</span></button></div></div></article>
+                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Sistema operativo" src="imagenes/informe.png"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Riego automático completado exitosamente</h3><p class="meta"> Hace 6 horas • Sistema: Riego Principal • Duración: 25 min </p><p class="description"> Ciclo de riego completado según programación. Humedad del suelo elevada al 52%. Próximo ciclo programado para las 18:00. </p><div class="actions"><button class="btn btn-outline"><span>Ver Detalles</span></button></div></div></article>
+                <article class="alert-item--success alert-item" role="article"><div class="thumb"><img alt="Calibración exitosa" src="imagenes/cosecha.png"><span class="priority-badge priority-badge--success">ÉXITO</span></div><div class="content"><h3 class="title">Calibración de sensores completada</h3><p class="meta"> Hace 1 día • Sensores: Todos (8/8) • Estado: Óptimo </p><p class="description"> Mantenimiento preventivo completado. Todos los sensores calibrados y verificados. Precisión de lectura: ±0.1°C. </p><div class="actions"><button class="btn btn-outline"><span>Ver Informe</span></button></div></div></article>
+                <article class="alert-item--warning alert-item" role="article"><div class="thumb"><img alt="Ventilador en mantenimiento" src="imagenes/humedad.png"><span class="priority-badge priority-badge--medium">MEDIA</span></div><div class="content"><h3 class="title">Ventilador secundario requiere mantenimiento</h3><p class="meta"> Hace 2 días • Actuador: Ventilador • Eficiencia: 82% </p><p class="description"> Eficiencia del ventilador por debajo del 85%. Programar revisión y limpieza de aspas en próxima sesión de mantenimiento. </p><div class="actions"><button class="btn btn-primary"><span>Programar Mantenimiento</span></button><button class="btn btn-outline"><span>Caso de Estudio</span></button></div></div></article>
+                <article class="alert-item alert-item--info" role="article"><div class="thumb"><img alt="Acceso de estudiante" src="imagenes/informe.png"><span class="priority-badge priority-badge--info">INFO</span></div><div class="content"><h3 class="title">Nueva sesión de práctica iniciada</h3><p class="meta">Hace 3 días • Usuario: Grupo A • Modo: Estudiante</p><p class="description"> Sesión educativa iniciada con 15 participantes. Escenario: Gestión de crisis térmica. Duración estimada: 60 min. </p><div class="actions"><button class="btn btn-outline"><span>Ver Progreso</span></button></div></div></article>
             </div>
         </div>
         <div class="alerts-sidebar">
